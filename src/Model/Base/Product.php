@@ -5,7 +5,7 @@ namespace App\Model\Base;
 use App\Base\Database\Database;
 use Exception;
 
-abstract class Product extends Database{
+abstract class Product extends Database {
 
     protected string $sku, $name, $price, $type, $attribute;
 
@@ -21,7 +21,7 @@ abstract class Product extends Database{
         $this->name = $name;
         $this->price = $price;
         $this->type = $type;
-        $this->$attribute = $attribute;    
+        $this->attribute = $attribute;    
     }
 
     // Accessors/ Getters 

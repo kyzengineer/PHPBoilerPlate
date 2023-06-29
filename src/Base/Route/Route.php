@@ -4,6 +4,7 @@ namespace App\Base\Route;
 use App\Base\Request\Request;
 class Route{
     private $request;
+    public $get, $post, $result;
     private $supportedHttpMethods = array("GET", "POST");
 
     function __construct(){

@@ -4,13 +4,32 @@ namespace App\Base\Request;
 
 class Request implements IRequest{
     private $body = [];
+    public $httpHost, $documentRoot;
+    public $remoteAddr, $remotePort;
+    public $serverSoftware, $serverProtocol, $serverName, $serverPort;
+    public $requestUri, $requestMethod, $requestTime_float, $requestTime;
+    public $scriptName, $scriptFilename;
+    public $phpSelf, $httpUser_agent, $httpSec_fetchSite;
+    public $httpConnection, $httpUpgrade_insecure_requests;
+    public $httpSec_fetch_mode, $httpSec_fetch_dest;
+    public $httpAccept, $httpAccept_language, $httpAccept_encoding;
+    // public $get, $post, $result;
 
     function __construct(){
         $this->bootstrapSelf();
     }
 
     private function bootstrapSelf(){
+        /**
+         * $_SERVER=[
+         *  http_host => "127.0.0.1"
+         * ]
+         * 
+         * 
+         */
+
         foreach($_SERVER as $key => $value){
+            // $this->httpHost
             $this->{$this->toCamelCase($key)} = $value;
         }
 

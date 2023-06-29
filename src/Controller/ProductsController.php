@@ -10,6 +10,7 @@ use App\Model\Products;
 
 class ProductsController{
     private Request $request;
+    public $result, $products;
     private $errorMessage = "";
 
     function __construct(Request $request){
@@ -17,9 +18,11 @@ class ProductsController{
     }
 
     public function get_front(){
+
+        $this->products = ["Apple", "Banana"];
         
         $result = (new Products())->selectAll();
-        return $this->render('front', ['result' => $result]);
+        return $this->render('home', ['products' => $this->products]);
     }
 
     public function get_add_product(){
@@ -59,7 +62,7 @@ class ProductsController{
             $this->{$key} = $value;
         }
         ob_start();
-        include('resources/view/' . $view . 'template.php'); // or wherever the template is located
+        include('view/' . $view . '.template.php'); // or wherever the template is located
         return ob_get_clean();
     }
 /* Method Setup

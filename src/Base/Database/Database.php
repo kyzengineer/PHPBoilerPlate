@@ -12,7 +12,7 @@ abstract class Database{
         // $dbUsername = "user";
         $dbUsername = "root";
         $dbPassword = "password";
-        $dbName = "myDB";
+        $dbName = "dev_server";
         $dbPort = "6606";
 
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

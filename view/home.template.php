@@ -7,7 +7,7 @@
 </head>
 <body>
     <ul>
-        <?php foreach($products as $product) : ?>
+        <?php foreach($this->products as $product) : ?>
             <li><?php echo $product ?></li>
         <?php endforeach ?>
     </ul>
